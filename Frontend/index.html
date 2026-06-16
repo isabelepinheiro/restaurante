@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/x-icon" href="/Restaurant/Frontend/img/favicon.ico">
+    <title>Sabor Nordestino</title>
+</head>
+<body>
+
+    <header>
+        <div class="headerLogo">  
+           <div class="heroLogo">
+               <img src="img/logo.png" alt="logo">
+           </div>
+        </div>
+        <nav class="headerNav">
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="espaco.html">Nosso Espaço</a>
+        </nav>
+        <div class="headerUsuario" id="headerUsuario"></div>
+    </header>
+    
+
+    <div class="layout">
+
+        <!-- COLUNA ESQUERDA -->
+        <div class="colEsquerda">
+
+            <div class="hero">
+                <div class="heroTexto">
+                <p class="heroSub"> Os mais pedidos da região</p>
+                <h2 class="heroTitulo">Peça agora e saboreie o Nordeste</h2>
+                <p class="heroDesc">
+                Carne de Sol, Baião de Dois, Panelada, Buchada e muitas outras
+                delícias preparadas na hora.
+                </p>
+                </div>
+                
+            </div>
+
+
+            <div class="menuTopo">
+                <h3 class="menuTitulo">Menu</h3>
+                <div class="menuFiltros">
+                    <div class="buscaWrapper">
+                        <span>🔍</span>
+                        <input type="text" id="busca" placeholder="Buscar" oninput="filtrarComidas()">
+                    </div>
+                    <select id="selectCategoria" onchange="filtrarComidas()">
+                        <option value="">Categories: Todas</option>
+                    </select>
+                    <select id="selectOrdem" onchange="filtrarComidas()">
+                        <option value="">Ordenados por:</option>
+                        <option value="preco_desc">Menor preço</option>
+                        <option value="preco_asc">Maior preço</option>
+                        <option value="nome">Nome A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="listaComidas"></div>
+
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <div class="colDireita">
+
+            <h3 class="pedidoTitulo">🛒 Carrinho</h3>
+
+            <div class="campo">
+                <label for="clienteNome">Seu nome</label>
+                <input type="text" id="clienteNome" placeholder="Ex: João Silva" oninput="carregarCompras()">
+            </div>
+
+            <div id="carrinhoVazio" class="semSelecao">Nenhuma comida adicionada</div>
+            <div id="carrinhoItens"></div>
+
+            <div class="totalLinha" id="totalLinha" style="display:none">
+                <span>Total</span>
+                <span id="totalPedido" class="totalValor">R$ 0,00</span>
+            </div>
+
+            <button class="btnFinalizar" onclick="realizarPedido()">Finalizar Pedido</button>
+
+            <div id="msgContainer"></div>
+
+            <hr class="divisor">
+
+           <div class="historicoHeader">
+    <h3 class="pedidoTitulo">Forma de Pagamento</h3>
+</div>
+
+<div class="campo">
+    <select id="formaPagamento">
+        <option value="">Selecione</option>
+        <option value="Pix">💳 Pix</option>
+        <option value="Dinheiro">💵 Dinheiro</option>
+        <option value="Cartão Credito">💳 Cartão de Crédito</option>
+        <option value="Cartão Debito">💳 Cartão de Débito</option>
+    </select>
+</div>
+
+            <div id="listaCompras">
+                <p class="semSelecao">Nenhum pedido ainda.</p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <!-- RODAPÉ FORA DO LAYOUT -->
+    <footer>
+        <div class="footerGrid">
+
+            <div class="footerBloco">
+                <h4>🍽️ Sabor Nordestino</h4>
+                <p>Trazendo o melhor da culinária nordestina com tradição, sabor e muito amor em cada prato.</p>
+                <div class="footerSelos">
+                    <span>✅ Comida Artesanal</span>
+                    <span>✅ Ingredientes Frescos</span>
+                    <span>✅ Receitas Tradicionais</span>
+                </div>
+            </div>
+
+            <div class="footerBloco">
+                <h4>📍 Onde Estamos</h4>
+                <p>Av. Simão de Góis, 1525<br> Centro — Jaguaruana, CE</p>
+                <p style="margin-top:10px">⏰ <strong>Horário de Funcionamento</strong><br>
+                Seg a Sex: 11h – 22h<br>
+                Sáb e Dom: 10h – 23h</p>
+            </div>
+
+            <div class="footerBloco">
+                <h4>📱 Redes Sociais</h4>
+                <div class="footerRedes">
+                    <div class="redeSocial">
+                        <span>📸</span> Instagram: @sabornordestino
+                    </div>
+                    <div class="redeSocial">
+                        <span>👍</span> Facebook: Sabor Nordestino
+                    </div>
+                    <div class="redeSocial">
+                        <span>💬</span> WhatsApp: (88) 93049-524
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerBloco">
+                <h4>🎉 São João Todo Dia!</h4>
+                <p>Pratos especiais de São João disponíveis durante todo o mês de junho.</p>
+                <div class="footerDestaques">
+                    <span>🌽 Pamonha</span>
+                    <span>🍮 Canjica</span>
+                    <span>🎂 Bolo de Milho</span>
+                    <span>🥜 Pé de Moleque</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <p>Direitos Reservados &copy; 2026 Sabor Nordestino — Feito com ❤️ no Ceará</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO MODO FESTA JUNINA -->
+    <button class="btnFesta" onclick="toggleFesta()" title="Modo Festa Junina">🎉</button>
+
+    <!-- BANDEIRINHAS -->
+    <div class="bandeirinhas" id="bandeirinhas" style="display:none">
+        <div class="fio">
+            <span>🔺</span><span>🔷</span><span>🔺</span><span>🔷</span>
+            <span>🔺</span><span>🔷</span><span>🔺</span><span>🔷</span>
+            <span>🔺</span><span>🔷</span><span>🔺</span><span>🔷</span>
+            <span>🔺</span><span>🔷</span><span>🔺</span><span>🔷</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/x-icon" href="/Restaurant/Frontend/img/favicon.ico">
+    <title>Pedidos — Sabor Nordestino</title>
+</head>
+<body>
+
+    <header>
+        <div class="headerLogo">
+            <div class="heroLogo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+        </div>
+        <nav class="headerNav">
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="pedidos.html" class="navAtivo">Pedidos</a>
+            <a href="espaco.html">Nosso Espaço</a>
+        </nav>
+        <div class="headerUsuario" id="headerUsuario"></div>
+    </header>
+
+    <div class="pedidosPage">
+
+        <!-- TOPO DA PÁGINA -->
+        <div class="pedidosHero">
+            <div class="pedidosHeroTexto">
+                <h1>🧾 Pedidos Realizados</h1>
+                <p>Acompanhe todos os pedidos feitos no restaurante</p>
+            </div>
+            <div class="pedidosBusca">
+                <div class="buscaWrapper">
+                    <span>🔍</span>
+                    <input type="text" id="buscaPedido" placeholder="Buscar por nome do cliente..." oninput="filtrarPedidos()">
+                </div>
+                <select id="filtroPagamento" onchange="filtrarPedidos()">
+                    <option value="">Todas as formas</option>
+                    <option value="Pix">💳 Pix</option>
+                    <option value="Dinheiro">💵 Dinheiro</option>
+                    <option value="Cartão Credito">💳 Cartão de Crédito</option>
+                    <option value="Cartão Debito">💳 Cartão de Débito</option>
+                </select>
+                <button class="btnAtualizar" onclick="limparPedidos()">↺ Limpar</button>
+            </div>
+        </div>
+
+        <!-- RESUMO EM CARDS -->
+        <div class="pedidosResumo">
+            <div class="resumoCard">
+                <div class="resumoIcone">🧾</div>
+                <div class="resumoInfo">
+                    <div class="resumoValor" id="totalPedidos">0</div>
+                    <div class="resumoLabel">Total de Pedidos</div>
+                </div>
+            </div>
+            <div class="resumoCard">
+                <div class="resumoIcone">💰</div>
+                <div class="resumoInfo">
+                    <div class="resumoValor" id="totalFaturado">R$ 0,00</div>
+                    <div class="resumoLabel">Total Faturado</div>
+                </div>
+            </div>
+            <div class="resumoCard">
+                <div class="resumoIcone">🍽️</div>
+                <div class="resumoInfo">
+                    <div class="resumoValor" id="totalItens">0</div>
+                    <div class="resumoLabel">Itens Vendidos</div>
+                </div>
+            </div>
+            <div class="resumoCard">
+                <div class="resumoIcone">👤</div>
+                <div class="resumoInfo">
+                    <div class="resumoValor" id="totalClientes">0</div>
+                    <div class="resumoLabel">Clientes Únicos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LISTA DE PEDIDOS -->
+        <div class="pedidosLista" id="pedidosLista">
+            <div class="pedidosLoading">Carregando pedidos...</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footerGrid">
+            <div class="footerBloco">
+                <h4>🍽️ Sabor Nordestino</h4>
+                <p>Trazendo o melhor da culinária nordestina com tradição, sabor e muito amor em cada prato.</p>
+                <div class="footerSelos">
+                    <span>✅ Comida Artesanal</span>
+                    <span>✅ Ingredientes Frescos</span>
+                    <span>✅ Receitas Tradicionais</span>
+                </div>
+            </div>
+            <div class="footerBloco">
+                <h4>📍 Onde Estamos</h4>
+                <p>Av. Simão de Góis, 1525<br>Centro — Jaguaruana, CE</p>
+                <p style="margin-top:10px">⏰ <strong>Horário de Funcionamento</strong><br>
+                Seg a Sex: 11h – 22h<br>Sáb e Dom: 10h – 23h</p>
+            </div>
+            <div class="footerBloco">
+                <h4>📱 Redes Sociais</h4>
+                <div class="footerRedes">
+                    <div class="redeSocial"><span>📸</span> Instagram: @sabornordestino</div>
+                    <div class="redeSocial"><span>👍</span> Facebook: Sabor Nordestino</div>
+                    <div class="redeSocial"><span>💬</span> WhatsApp: (88) 93049-524</div>
+                </div>
+            </div>
+            <div class="footerBloco">
+                <h4>🎉 São João Todo Dia!</h4>
+                <p>Pratos especiais de São João disponíveis durante todo o mês de junho.</p>
+                <div class="footerDestaques">
+                    <span>🌽 Pamonha</span>
+                    <span>🍮 Canjica</span>
+                    <span>🎂 Bolo de Milho</span>
+                    <span>🥜 Pé de Moleque</span>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Direitos Reservados &copy; 2026 Sabor Nordestino — Feito com ❤️ no Ceará</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="pedidos.js"></script>
+</body>
+</html>

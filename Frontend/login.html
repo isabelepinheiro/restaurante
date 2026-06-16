@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/x-icon" href="/Restaurant/Frontend/img/favicon.ico">
+    <title>Login — Sabor Nordestino</title>
+</head>
+<body>
+
+    <header>
+        <div class="headerLogo">
+            <div class="heroLogo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+        </div>
+        <nav class="headerNav">
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="espaco.html">Nosso Espaço</a>
+        </nav>
+        <div class="headerUsuario" id="headerUsuario"></div>
+    </header>
+
+    <div class="loginPage">
+        <div class="loginCard">
+
+            <!-- ABAS -->
+            <div class="loginAbas">
+                <button class="abaBtn ativa" id="abaEntrar" onclick="mostrarAba('entrar')">Entrar</button>
+                <button class="abaBtn" id="abaCriar" onclick="mostrarAba('criar')">Criar Conta</button>
+            </div>
+
+            <!-- FORM LOGIN -->
+            <div class="loginForm" id="formEntrar">
+                <h2 class="loginTitulo">Bem-vindo de volta 👋</h2>
+                <p class="loginSub">Entre para ver seus pedidos</p>
+
+                <div class="campo">
+                    <label for="loginEmail">E-mail</label>
+                    <input type="email" id="loginEmail" placeholder="seu@email.com">
+                </div>
+
+                <div class="campo">
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" id="loginSenha" placeholder="••••••••">
+                </div>
+
+                <button class="btnFinalizar" onclick="fazerLogin()">Entrar</button>
+
+                <div id="msgLogin"></div>
+            </div>
+
+            <!-- FORM CRIAR CONTA -->
+            <div class="loginForm" id="formCriar" style="display:none">
+                <h2 class="loginTitulo">Criar sua conta 🎉</h2>
+                <p class="loginSub">Cadastre-se para acompanhar seus pedidos</p>
+
+                <div class="campo">
+                    <label for="criarNome">Nome</label>
+                    <input type="text" id="criarNome" placeholder="Ex: João Silva">
+                </div>
+
+                <div class="campo">
+                    <label for="criarEmail">E-mail</label>
+                    <input type="email" id="criarEmail" placeholder="seu@email.com">
+                </div>
+
+                <div class="campo">
+                    <label for="criarSenha">Senha</label>
+                    <input type="password" id="criarSenha" placeholder="Mínimo 4 caracteres">
+                </div>
+
+                <button class="btnFinalizar" onclick="criarConta()">Criar Conta</button>
+
+                <div id="msgCriar"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerGrid">
+            <div class="footerBloco">
+                <h4>🍽️ Sabor Nordestino</h4>
+                <p>Trazendo o melhor da culinária nordestina com tradição, sabor e muito amor em cada prato.</p>
+            </div>
+            <div class="footerBloco">
+                <h4>📍 Onde Estamos</h4>
+                <p>Av. Simão de Góis, 1525<br>Centro — Jaguaruana, CE</p>
+            </div>
+            <div class="footerBloco">
+                <h4>📱 Redes Sociais</h4>
+                <div class="footerRedes">
+                    <div class="redeSocial"><span>📸</span> Instagram: @sabornordestino</div>
+                    <div class="redeSocial"><span>👍</span> Facebook: Sabor Nordestino</div>
+                    <div class="redeSocial"><span>💬</span> WhatsApp: (88) 93049-524</div>
+                </div>
+            </div>
+            <div class="footerBloco">
+                <h4>🎉 São João Todo Dia!</h4>
+                <p>Pratos especiais de São João disponíveis durante todo o mês de junho.</p>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Direitos Reservados &copy; 2026 Sabor Nordestino — Feito com ❤️ no Ceará</p>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
