@@ -13,6 +13,7 @@ import {
 const server = express();
 const PORT = 8080;
 
+//Uso do cors
 server.use(cors());
 server.use(express.json());
 
