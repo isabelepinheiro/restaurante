@@ -1,6 +1,6 @@
 # 🍽️ Sabor Nordestino — Sistema de Pedidos
 
-Sistema web  de pedidos para restaurante nordestino, com cardápio interativo, carrinho de compras, forma de pagamento e página de pedidos realizados. Teste de atualização
+Sistema web  de pedidos para restaurante nordestino, com cardápio interativo, carrinho de compras, forma de pagamento e página de pedidos realizados.
 
 ---
 
